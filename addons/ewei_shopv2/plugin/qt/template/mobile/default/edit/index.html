@@ -1,0 +1,32 @@
+{template '_header'}
+
+<div class='fui-page  fui-page-current'>
+
+    <div class="fui-header">
+
+        <div class="fui-header-left">
+
+            <a class="back"></a>
+
+        </div>
+
+        <div class="title">{php echo m('plugin')->getName('qt')}</div>
+
+        <div class="fui-header-right">
+
+            <a class="icon icon-home external" href="{php echo mobileUrl()}"></a>
+
+        </div>
+
+    </div>
+</div>
+<script>
+
+    source = new EventSource('http://localhost/app/index.php?i=1&c=entry&m=ewei_shopv2&do=mobile&r=qt.sent');
+    source.onmessage = function (event) {
+        json = JSON.parse(event.data);
+    ... 后面是你处理数据的部分 ...
+    };
+
+
+</script>

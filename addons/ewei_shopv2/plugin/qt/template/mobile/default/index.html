@@ -1,0 +1,52 @@
+{template '_header'}
+<div class="page-heading">
+	<span class="pull-right">
+
+	</span>
+    <h2 style="font-family : 宋体,sans-serif;font-size : 16pt">留言板 <small style="padding-left: 800px">总数:{$num}条 <span class="text-danger"></span> </small></h2>
+</div>
+
+<form action="./index.php" method="get" class="form-horizontal" role="form">
+    <input type="hidden" name="c" value="site">
+    <input type="hidden" name="a" value="entry">
+    <input type="hidden" name="m" value="ewei_shopv2">
+    <input type="hidden" name="do" value="mobile">
+    <input type="hidden" name="r" value="qt.edit">
+    <div class="page-toolbar row m-b-sm m-t-sm">
+        <div class="col-sm-4">
+
+
+        </div>
+
+        <div class="col-sm-6 pull-right">
+            <div class="input-group" style="left: 500px">
+                <button  class="btn btn-sm btn-primary" type="submit"> 写留言</button>
+            </div>
+        </div>
+</form>
+<!-- 文章列表 -->
+
+<table class="table table-hover table-responsive">
+
+</table>
+
+{loop $array $key $row}
+
+<div class='panel panel-default' {if $key%2 == 1 } style="background-color:#F0FFF0;font-family : 宋体,sans-serif;font-size : 12pt;" {/if} style=" font-family : 宋体,sans-serif;font-size : 12pt;">
+
+<div class='panel-body' style='text-align-all; padding:25px;line-height:50px'>
+    <div class="input-group" style="left: 1000px; margin-top: 0px;margin-right: 10px">
+        <a href="index.php?c=site&a=entry&m=ewei_shopv2&do=web&r=qt.delete&id={$row['id']}"> <button  class="btn btn-sm btn-primary" type="button"> 删除</button></a>
+    </div>
+    {$row['content']}
+</div>
+<div class='panel-body' style='text-align-last: right;padding:20px;'>
+    留言人：{$row['name']}<br/><br/>
+    时间：{$row['time']}
+</div>
+</div>
+
+{/loop}
+
+{template '_footer'}
+<!--NDAwMDA5NzgyNw==-->

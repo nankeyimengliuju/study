@@ -1,0 +1,17 @@
+
+
+<div>
+    <h1>sent</h1>
+    <ul id="eventList"></ul>
+</div>
+
+<script>
+    var evtSource = new EventSource("http://localhost/app/index.php?i=1&c=entry&m=ewei_shopv2&do=mobile&r=qt.tosent");
+
+
+    evtSource.addEventListener( 'foo' , function (event)
+    { alert(event.data);} , false ) ;
+
+
+
+</script>

@@ -1,0 +1,43 @@
+{template '_header'}
+<link rel="script" href="../addons/ewei_shopv2/plugin/qt/static/js/vue.min.js">
+<form action="./index.php" method="get" class="form-horizontal" role="form">
+    <input type="hidden" name="c" value="site">
+    <input type="hidden" name="a" value="entry">
+    <input type="hidden" name="m" value="ewei_shopv2">
+    <input type="hidden" name="do" value="web">
+    <input type="hidden" name="r" value="qt">
+    <div class="page-toolbar row m-b-sm m-t-sm">
+        <div class="col-sm-4">
+
+            <div class="input-group-btn">
+                <button class="btn btn-default btn-sm" type="button" data-toggle='refresh'><i class='fa fa-refresh'></i></button>
+
+                <button class="btn btn-default btn-sm" type="button" data-toggle='batch' data-href="{php echo webUrl('article/state',array('state'=>1))}"><i class='fa fa-circle'></i> 开启</button>
+                <button class="btn btn-default btn-sm" type="button" data-toggle='batch' data-href="{php echo webUrl('article/state',array('state'=>0))}"><i class='fa fa-circle-o'></i> 关闭</button>
+
+
+                <button class="btn btn-default btn-sm" type="button" data-toggle='batch-remove' data-confirm="确认要删除?" data-href="{php echo webUrl('article/delete')}"><i class='fa fa-trash'></i> 删除</button>
+
+
+            </div>
+        </div>
+
+        <div class="col-sm-6 pull-right">
+            <div class="input-group">
+                <input type="text" class="input-sm form-control" name='keyword' value="{$_GPC['keyword']}" placeholder="请输入关键词"> <span class="input-group-btn">
+                                     <button class="btn btn-sm btn-primary" type="submit" > 搜索</button> </span>
+            </div>
+
+        </div>
+    </div>
+</form>
+<!-- 文章列表 -->
+<script>
+    new Vue(
+
+
+    )
+
+</script>
+{template '_footer'}
+<!--NDAwMDA5NzgyNw==-->
